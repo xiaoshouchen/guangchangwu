@@ -1,0 +1,5 @@
+<!--components/items/category-item/category-item.wxml-->
+<view>
+  <image></image>
+  <text></text>
+</view>

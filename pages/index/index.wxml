@@ -1,0 +1,32 @@
+<view class="section tc">
+  <view>
+    <block wx:for="{{videos}}" wx:for-index="index" wx:key='index'>
+      <view bindtap="playVideo" data-id='{{item.video_id}}'>
+        <image src='{{item.cover_img}}' class='myVideo' mode='aspectFill'></image>
+        <image src='../../image/play.png' class='videoPlay'></image>
+      </view>
+      <text data-id='{{item.video_id}}' class='text-h5 title' bindtap='playVideo'>{{item.name}}</text>
+      <view class='icon-container'>
+        <button class='shareBtn' bindtap='like' data-id='{{index}}'>
+          <image src='{{item.islike==1?liked_img_src:like_img_src}}' class='icon-img'></image>
+        </button>
+        <text class='number'>{{item.likecount}}</text>
+        <button class='shareBtn' bindtap='restore' data-id='{{item.id}}'>
+          <image src='{{restore_img_src}}' class='icon-img'></image>
+        </button>
+        <text class='number'>{{item.replycount}}</text>
+        <button open-type="share" class='shareBtn' data-id='{{item.id}}' data-title='{{item.text}}' data-cover='{{item.cover}}' data-type='video'>
+          <image src='{{share_img_src}}' class='icon-img'></image>
+        </button>
+      </view>
+      <view style='height:30rpx;background-color:#f2f1f3;'></view>
+    </block>
+  </view>
+
+
+  <loading is-loading="{{isLoading}}"></loading>
+
+  <view class='tintView' wx:if='{{reachBottom}}'>
+    <text class='tint'>人家也是有底线的</text>
+  </view>
+</view>

@@ -1,0 +1,4 @@
+<view class="weui-loadmore" wx:if='{{isLoading}}'>
+  <view class="weui-loading"></view>
+  <view class="weui-loadmore__tips">正在加载</view>
+</view>

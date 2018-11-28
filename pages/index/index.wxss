@@ -1,0 +1,143 @@
+/**index.wxss**/
+
+.myVideo {
+  width: 690rpx;
+  height: 460rpx;
+  margin-left: 30rpx;
+  border-radius: 10rpx;
+}
+
+.userInfoView {
+  padding: 30rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.nameView {
+  display: flex;
+  flex-direction: column;
+  padding-left: 30rpx;
+}
+
+.nameText {
+  font-size: 26rpx;
+  font-weight: bold;
+  color: #7d7885;
+}
+
+.DesText {
+  font-size: 24rpx;
+  color: #beb9c1;
+}
+.number {
+  font-size: 26rpx;
+  color: #beb9c1;
+  align-items: left;
+  margin-left: -80rpx;
+  margin-right: 80rpx;
+  margin-bottom: 12rpx;
+}
+
+.videoPlay {
+  width: 64rpx;
+  height: 64rpx;
+  margin-left: -402rpx;
+  margin-top: 188rpx;
+  position: absolute;
+}
+
+.icon-img {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.title {
+  position: relative;
+  margin-left: 35rpx;
+  margin-right: 35rpx;
+  display: block;
+  font-size: 28rpx;
+  color: #000;
+  line-height: 40rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-bottom: 15rpx;
+  margin-top: 15rpx;
+}
+
+.section {
+  height: 100%;
+}
+
+.tint {
+  color: "#aaa";
+}
+
+.tintView {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.play {
+  width: 64;
+  height: 64;
+}
+
+.shareBtn {
+  background: none !important;
+  color: #000 !important;
+}
+
+.shareBtn::after {
+  border: none;
+}
+
+.header {
+  z-index: 100;
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  background-color: #e53935;
+  height: 60rpx;
+}
+
+.header-title-active {
+  color: #fff;
+  font-size: 30rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+.header-title {
+  color: #eee;
+  font-size: 30rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+
+.tc {
+  margin-top: 50rpx;
+}
+
+.header-item-active {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid #fff;
+}
+.header-item {
+  display: flex;
+  flex-direction: column;
+}

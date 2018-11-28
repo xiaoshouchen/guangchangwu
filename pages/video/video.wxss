@@ -1,0 +1,101 @@
+/* pages/video/video.wxss */
+
+.myVideo {
+  width: 750rpx;
+  height: 420rpx;
+  margin-top: 20rpx;
+}
+
+.title {
+  margin-left: 20rpx;
+}
+
+.videoView {
+  padding-top: 20rpx;
+}
+
+.share {
+  margin: 20rpx;
+}
+
+.icon-img {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.shareBtn {
+  width: 100rpx;
+  background: none !important;
+  color: #000 !important;
+}
+
+.shareBtn::after {
+  border: none;
+}
+
+.shareTxt {
+  display: flex;
+  flex: 3;
+  font-size: 28rpx;
+  color: #78909c;
+  margin-left: 30rpx;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1;
+}
+
+.danmuInput {
+  padding: 10rpx;
+  border: 1px solid #beb9c1;
+  border-radius: 20rpx;
+  margin: 30rpx;
+  font-size: 26rpx;
+}
+
+.danmuButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  border-radius: 20px;
+  background-color: #ff6c70;
+  height: 80rpx;
+  align-self: center;
+}
+
+.danmuButton::after {
+  border: none;
+}
+
+.danmuButtonText {
+  font-size: 28rpx;
+  align-self: center;
+  color: #fff;
+}
+
+.index {
+  height: 50rpx;
+  width: 50rpx;
+}
+
+.indexView {
+  position: fixed;
+  bottom: 50rpx;
+  right: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.indexText {
+  font-size: 26rpx;
+  align-self: center;
+}

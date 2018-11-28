@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "loading": "/components/items/loading/loading"
+  },
+  "enablePullDownRefresh": true
+}
