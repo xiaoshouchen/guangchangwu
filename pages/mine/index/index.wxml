@@ -1,0 +1,21 @@
+<!-- 个人信息区域 -->
+<view class='info-area flex-column items-center justify-center'>
+  <!-- <image class="info-area" style='position: absolute; top: 0; left: 0;' src='/images/info_bg.png' /> -->
+  <view class="avatar-wrap">
+    <open-data class="avatar" type="userAvatarUrl" />
+  </view>
+  <open-data class="nickname pingfangsc-m" type="userNickName" />
+</view>
+
+<!-- 菜单区域 -->
+<view class="menu-area flex-column items-center">
+  <menu-item url="/pages/mine/favorites/favorites" icon="/resources/images/favorite.png" title="我的收藏" />
+  <line lheight="2" lwidth="700" lcolor="#e2e2e2" />
+  <menu-item url="/pages/mine/minis/minis" icon="/resources/images/minis.png" title="精品推荐" />
+  <line lheight="3" lwidth="700" lcolor="#e2e2e2" />
+  <menu-item url="/pages/mine/feedback/feedback" icon="/resources/images/feedback.png" title="反馈建议" />
+</view>
+
+<!-- 分享 -->
+<button class="share-btn flex-row items-center justify-center pingfangsc-m" open-type='share'>分享给好友</button>
+<copyright></copyright>

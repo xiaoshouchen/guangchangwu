@@ -1,0 +1,21 @@
+/* components/items/copyright/copyright.wxss */
+
+.container {
+  position: fixed;
+  bottom: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.copyright {
+  font-size: 28rpx;
+  color: #37474f;
+}
+
+.call {
+  font-size: 28rpx;
+  color: #37474f;
+}

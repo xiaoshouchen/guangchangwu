@@ -2,7 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/video/video",
-    "pages/category/category"
+    "pages/mine/index/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -11,14 +11,20 @@
     "navigationBarTextStyle": "#fff"
   },
   "tabBar": {
+    "selectedColor": "#d81e06",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页"
+        "text": "首页",
+       
+        "iconPath": "/resources/images/tabbar/home.png",
+        "selectedIconPath": "/resources/images/tabbar/home-active.png"
       },
       {
-        "pagePath": "pages/category/category",
-        "text": "分类"
+        "pagePath": "pages/mine/index/index",
+        "text": "我的",
+        "iconPath": "/resources/images/tabbar/mine.png",
+        "selectedIconPath": "/resources/images/tabbar/mine-active.png"
       }
     ]
   }

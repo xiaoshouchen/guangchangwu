@@ -1,10 +1,28 @@
-function jump(method, url, data = null, success = () => { }, fail = () => { }, complete = () => { }) {
+import {
+  CONFIG
+} from './conf.js';
+
+function log(message) {
+  if (CONFIG.enviroment == 'dev') {
+    var pages = getCurrentPages() //获取加载的页面
+    var currentPage = pages[pages.length - 1] //获取当前页面的对象
+    var url = currentPage.route //当前页面url
+    var options = currentPage.options //如果要获取url中所带的参数可以查看options
+    let params = '';
+    for (let i in options) {
+      params += i + ":" + options[i];
+    }
+    console.log('路径：' + url + '\n' + '参数：' + params + '\n' + '输出信息为：' + message);
+  } else {
+    //DO NOTHING
+  }
+}
+
+function jump(method, url, data = null, success = () => {}, fail = () => {}, complete = () => {}) {
   let params = '?';
   for (let item in data) {
     params += `&${item}=${data[item]}`;
   }
-  console.log('utils.js-jump');
-  console.log(url+params);
   switch (method) {
     case 'to':
       wx.navigateTo({
@@ -37,11 +55,11 @@ function jump(method, url, data = null, success = () => { }, fail = () => { }, c
   }
 }
 
-function time_add_zero(num) {
+function timeAddZero(num) {
   return `0${num}`.slice(-num.length);
 }
 
-function get_rand_color() {
+function getRandomColor() {
   let rgb = []
   for (let i = 0; i < 3; ++i) {
     let color = Math.floor(Math.random() * 256).toString(16)
@@ -50,8 +68,48 @@ function get_rand_color() {
   }
   return '#' + rgb.join('')
 }
+
+function replaceUrlParams(url, params) {
+  for (let p in params) {
+    url = url.replace(/({[a-zA-Z0-9]+})/, params[p]);
+  }
+  return url;
+}
+
+function http_request(url, params, data, header = {}, method) {
+  return new Promise((resovle, reject) => {
+    wx.request({
+      url: replaceUrlParams(url, params),
+      header: header,
+      method: method,
+      data: data,
+      success(res) {
+        resovle(res)
+      },
+      fail(res) {
+        reject(res)
+      }
+    })
+  });
+}
+const http = {
+  get(url, params, data, header) {
+    return http_request(url, params, data, header, 'GET');
+  },
+  post(url, params, data, header) {
+    return http_request(url, params, data, header, 'POST');
+  },
+  update(url, params, data, header) {
+    return http_request(url, params, data, header, 'UPDATE');
+  },
+  delete(url, params, data, header) {
+    return http_request(url, params, data, header, 'DELETE');
+  },
+};
 export const util = {
-  jump: jump,
-  time_add_zero: time_add_zero,
-  get_rand_color: get_rand_color
+  log,
+  jump,
+  timeAddZero,
+  getRandomColor,
+  http,
 }

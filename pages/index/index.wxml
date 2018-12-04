@@ -10,11 +10,7 @@
         <button class='shareBtn' bindtap='like' data-id='{{index}}'>
           <image src='{{item.islike==1?liked_img_src:like_img_src}}' class='icon-img'></image>
         </button>
-        <text class='number'>{{item.likecount}}</text>
-        <button class='shareBtn' bindtap='restore' data-id='{{item.id}}'>
-          <image src='{{restore_img_src}}' class='icon-img'></image>
-        </button>
-        <text class='number'>{{item.replycount}}</text>
+        <text class='number'>点赞</text>
         <button open-type="share" class='shareBtn' data-id='{{item.id}}' data-title='{{item.text}}' data-cover='{{item.cover}}' data-type='video'>
           <image src='{{share_img_src}}' class='icon-img'></image>
         </button>

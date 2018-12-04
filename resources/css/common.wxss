@@ -1,0 +1,25 @@
+page {
+  background: #f4f4f4;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.pingfangsc-m {
+  font-family: PingFangSC-Medium;
+}

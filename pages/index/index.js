@@ -5,18 +5,22 @@ import {
 
 import {
   util
-} from '../../utils/function.js';
+} from '../../utils/util.js';
 Page({
   data: {
     videos: [],
     page: 1,
     isLoading: false,
     reachBottom: false,
+    liked_img_src:'/resources/images/like-fill.png',
+    like_img_src:'/resources/images/like.png',
+    share_img_src:'/resources/images/share.png',
   },
   onPullDownRefresh: function() {
     var that = this;
   },
   onLoad: function() {
+    util.log('加载')
     let that = this;
     util.http.get(API.VIDEO_LIST, {}, {
       page: 1

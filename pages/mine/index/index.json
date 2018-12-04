@@ -1,0 +1,6 @@
+{
+  "usingComponents":{
+    "copyright":"/components/items/copyright/copyright",
+    "menu-item":"/components/items/menu-item/menu-item"
+  }
+}

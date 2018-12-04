@@ -1,5 +1,4 @@
-// pages/category/category.js
-import {util} from '../../utils/util.js';
+// pages/mine/index/index.js
 Page({
 
   /**

@@ -1,7 +1,7 @@
 // pages/video/video.js
 import {
   util
-} from '../../utils/function.js';
+} from '../../utils/util.js';
 import {
   API
 } from '../../utils/api.js';
