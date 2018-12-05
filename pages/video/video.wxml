@@ -1,6 +1,6 @@
 <view class='videoView'>
   <text class='text-h5 title'>{{video.name}}</text>
-  <video src='{{video.url}}' poster='{{video.cover_img}}' id='myVideo' class='myVideo' enable-danmu='true' danmu-btn='true' danmu-list="{{danmuList}}" bindtimeupdate='getTime'></video>
+  <video src='{{video.url}}' autoplay='true' id='myVideo' class='myVideo' bindtimeupdate='getTime'></video>
   <view class='icon-container'>
     <text class='shareTxt'>喜欢就分享给朋友哦～</text>
     <button open-type="share" class='shareBtn'>
@@ -8,15 +8,12 @@
     </button>
   </view>
   <view style='height:20rpx;background-color:#eee'></view>
-  <form bindsubmit="sendDanmu">
-    <input name="danmuInput" id="danmuInput" class='danmuInput' text="text" placeholder='装填弹幕，准备发射,不要超过30颗哦！' maxlength='100' confirm-type='send' bindinput='changeDanmu' value='{{danmuValue}}'>
-    </input>
-    <button class='danmuButton' formType="submit">
-      <text class='danmuButtonText'>弹幕发射</text>
-    </button>
-  </form>
+  <view class='guess'>猜你喜欢</view>
+  <block wx:for="{{abouts}}" wx:key="index">
+    <about-item video="{{item}}"></about-item>
+  </block>
   <view class="indexView" bindtap='goToIndex'>
-    <image src='../../image/index.png' class="index"></image>
+    <image src='../../resources/images/index.png' class="index"></image>
     <text class='indexText'>回到首页</text>
   </view>
 </view>

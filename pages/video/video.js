@@ -13,11 +13,10 @@ Page({
    */
   data: {
     video: {},
-    liked_img_src: '../../static/liked.png',
-    like_img_src: '../../static/like.png',
-    restore_img_src: '../../static/restore.png',
-    restored_img_src: '../../static/restored.png',
-    share_img_src: '../../static/share.png',
+    restore_img_src: '../../resources/images/restore.png',
+    restored_img_src: '../../resources/images/restored.png',
+    share_img_src: '../../resources/images/share.png',
+    abouts: {}
   },
   /**
    * 生命周期函数--监听页面加载
@@ -27,12 +26,24 @@ Page({
     that.setData({
       video_id: options.id
     });
-    console.log(that.data.video_id);
+    //请求视频
     util.http.get(API.GET_VIDEO, {
       id: that.data.video_id
     }, {}).then(res => {
       that.setData({
         video: res.data.data
+      })
+    })
+    //提交浏览
+    util.http.post(API.VIEW_VIDEO, {
+      id: options.id
+    })
+    //获取相关视频
+    util.http.get(API.ABOUT, {
+      id: that.data.video_id
+    }, {}).then(res => {
+      that.setData({
+        abouts: res.data.data
       })
     })
   },

@@ -94,7 +94,6 @@ Page({
     let data = {
       id: e.currentTarget.dataset.id
     }
-    console.log(e.currentTarget.dataset.id);
     util.jump('to', '/pages/video/video', data);
   }
 })

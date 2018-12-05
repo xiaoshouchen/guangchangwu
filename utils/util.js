@@ -1,6 +1,9 @@
 import {
   CONFIG
 } from './conf.js';
+import {
+  API
+} from './api.js';
 
 function log(message) {
   if (CONFIG.enviroment == 'dev') {
@@ -77,32 +80,71 @@ function replaceUrlParams(url, params) {
 }
 
 function http_request(url, params, data, header = {}, method) {
-  return new Promise((resovle, reject) => {
-    wx.request({
-      url: replaceUrlParams(url, params),
-      header: header,
-      method: method,
-      data: data,
+  let user_id = wx.getStorageSync('user_id');
+  let token = wx.getStorageSync('token');
+  if (user_id && token) {
+    return new Promise((resovle, reject) => {
+      wx.request({
+        url: replaceUrlParams(url, params),
+        header: header,
+        method: method,
+        data: data,
+        success(res) {
+          resovle(res)
+        },
+        fail(res) {
+          reject(res)
+        }
+      })
+    });
+  } else {
+    wx.login({
       success(res) {
-        resovle(res)
-      },
-      fail(res) {
-        reject(res)
+        if (res.code) {
+          wx.request({
+            url: API.LOGIN,
+            success(res) {
+              wx.setStorageSync(user_id, res.data.data.user_id);
+              wx.setStorageSync(token, res.data.data.token);
+              http_request(url, params, data, header, method);
+            },
+            fail(res) {
+              console.log('报错啦');
+            }
+          })
+        }
       }
     })
-  });
+  }
+
 }
 const http = {
   get(url, params, data, header) {
+    Object.assign(data, {
+      user_id: wx.getStorageSync('user_id'),
+      token: wx.getStorageSync('token')
+    })
     return http_request(url, params, data, header, 'GET');
   },
   post(url, params, data, header) {
+    Object.assign(data, {
+      user_id: wx.getStorageSync('user_id'),
+      token: wx.getStorageSync('token')
+    })
     return http_request(url, params, data, header, 'POST');
   },
   update(url, params, data, header) {
+    Object.assign(data, {
+      user_id: wx.getStorageSync('user_id'),
+      token: wx.getStorageSync('token')
+    })
     return http_request(url, params, data, header, 'UPDATE');
   },
   delete(url, params, data, header) {
+    Object.assign(data, {
+      user_id: wx.getStorageSync('user_id'),
+      token: wx.getStorageSync('token')
+    })
     return http_request(url, params, data, header, 'DELETE');
   },
 };

@@ -99,3 +99,8 @@
   font-size: 26rpx;
   align-self: center;
 }
+
+.guess {
+  font-size: 36rpx;
+  margin: 30rpx;
+}

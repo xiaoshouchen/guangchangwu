@@ -1,0 +1,4 @@
+<view class='container'>
+  <image src='{{video.cover_img}}' mode='aspectFill' class='cover_img'></image>
+  <text class='video_name'>{{video.name}}</text>
+</view>

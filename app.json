@@ -2,7 +2,9 @@
   "pages": [
     "pages/index/index",
     "pages/video/video",
-    "pages/mine/index/index"
+    "pages/mine/index/index",
+    "pages/mine/restore/restore",
+    "pages/mine/recommend/recommend"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -16,7 +18,6 @@
       {
         "pagePath": "pages/index/index",
         "text": "首页",
-       
         "iconPath": "/resources/images/tabbar/home.png",
         "selectedIconPath": "/resources/images/tabbar/home-active.png"
       },

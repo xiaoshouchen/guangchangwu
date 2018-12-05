@@ -1,0 +1,18 @@
+/* components/items/about-item/about-item.wxss */
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.cover_img {
+  width: 360rpx;
+  height: 240rpx;
+  padding: 20rpx;
+}
+
+.video_name {
+  font-size: 28rpx;
+  width: 450rpx;
+  padding: 20rpx;
+}

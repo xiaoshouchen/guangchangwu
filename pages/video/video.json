@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "视频"
+  "navigationBarTitleText": "视频",
+  "usingComponents":{
+    "about-item":"/components/items/about-item/about-item"
+  }
 }

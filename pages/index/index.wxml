@@ -3,7 +3,7 @@
     <block wx:for="{{videos}}" wx:for-index="index" wx:key='index'>
       <view bindtap="playVideo" data-id='{{item.video_id}}'>
         <image src='{{item.cover_img}}' class='myVideo' mode='aspectFill'></image>
-        <image src='../../image/play.png' class='videoPlay'></image>
+        <image src='../../resources/images/play.png' class='videoPlay'></image>
       </view>
       <text data-id='{{item.video_id}}' class='text-h5 title' bindtap='playVideo'>{{item.name}}</text>
       <view class='icon-container'>
@@ -14,6 +14,7 @@
         <button open-type="share" class='shareBtn' data-id='{{item.id}}' data-title='{{item.text}}' data-cover='{{item.cover}}' data-type='video'>
           <image src='{{share_img_src}}' class='icon-img'></image>
         </button>
+        <text class='number'>分享</text>
       </view>
       <view style='height:30rpx;background-color:#f2f1f3;'></view>
     </block>
