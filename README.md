@@ -5,7 +5,7 @@
 
 # pages 主要代码
 
-# resources 
+# resources 资源
 ## css 通用样式
 ## images 图片
 
