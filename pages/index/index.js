@@ -12,15 +12,15 @@ Page({
     page: 1,
     isLoading: false,
     reachBottom: false,
-    liked_img_src:'/resources/images/like-fill.png',
-    like_img_src:'/resources/images/like.png',
+    restored:'/resources/images/restored.png',
+    restore:'/resources/images/restore.png',
+    view:'/resources/images/view.png',
     share_img_src:'/resources/images/share.png',
   },
   onPullDownRefresh: function() {
     var that = this;
   },
   onLoad: function() {
-    util.log('加载')
     let that = this;
     util.http.get(API.VIDEO_LIST, {}, {
       page: 1

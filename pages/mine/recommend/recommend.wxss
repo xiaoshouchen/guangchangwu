@@ -1,1 +1,13 @@
 /* pages/mine/recommend/recommend.wxss */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.img {
+  width: 300rpx;
+  height: 300rpx;
+}

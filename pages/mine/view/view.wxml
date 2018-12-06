@@ -1,3 +1,4 @@
+<!--pages/mine/view/view.wxml-->
 <block wx:for="{{videos}}" wx:for-index="index" wx:key='index'>
   <view bindtap="playVideo" data-id='{{item.video_id}}'>
     <image src='{{item.cover_img}}' class='myVideo' mode='aspectFill'></image>

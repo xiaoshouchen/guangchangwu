@@ -4,7 +4,8 @@
     "pages/video/video",
     "pages/mine/index/index",
     "pages/mine/restore/restore",
-    "pages/mine/recommend/recommend"
+    "pages/mine/recommend/recommend",
+    "pages/mine/view/view"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -28,5 +29,8 @@
         "selectedIconPath": "/resources/images/tabbar/mine-active.png"
       }
     ]
-  }
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wxa6a0a8789c7d92d0"
+  ]
 }

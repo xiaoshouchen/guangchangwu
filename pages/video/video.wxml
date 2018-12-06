@@ -2,10 +2,14 @@
   <text class='text-h5 title'>{{video.name}}</text>
   <video src='{{video.url}}' autoplay='true' id='myVideo' class='myVideo' bindtimeupdate='getTime'></video>
   <view class='icon-container'>
-    <text class='shareTxt'>喜欢就分享给朋友哦～</text>
-    <button open-type="share" class='shareBtn'>
-      <image src='{{share_img_src}}' class='icon-img' id='restore_img_{{index}}'></image>
+    <button class='shareBtn' bindtap='restore' data-id='{{video.video_id}}'>
+      <image src='{{video.is_restore==1?restored:restore}}' class='icon-img'></image>
     </button>
+    <view class='shareText' bindtap='restore' data-id='{{video.video_id}}'>喜欢就收藏吧</view>
+    <button open-type="share" class='shareBtn'>
+      <image src='{{share}}' class='icon-img' data-id='{{video.video_id}}'></image>
+    </button>
+    <view class='shareText' bindtap='restore' data-id='{{video.video_id}}'>喜欢就分享给朋友</view>
   </view>
   <view style='height:20rpx;background-color:#eee'></view>
   <view class='guess'>猜你喜欢</view>

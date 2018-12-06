@@ -1,2 +1,8 @@
-<!--pages/mine/recommend/recommend.wxml-->
-<text>pages/mine/recommend/recommend.wxml</text>
+<view class='imgRowList'>
+  <block wx:for="{{recommends}}" wx:key="index">
+    <view bindtap='nav' data-mini='{{item}}' class='container'>
+      <image src='{{item.img}}' class='img'></image>
+      <text>{{item.name}}</text>
+    </view>
+  </block>
+</view>

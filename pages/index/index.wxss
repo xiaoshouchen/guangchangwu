@@ -31,9 +31,9 @@
 }
 .number {
   font-size: 26rpx;
-  color: #beb9c1;
+  color: #333333;
   align-items: left;
-  margin-left: -80rpx;
+  margin-left: -30rpx;
   margin-right: 80rpx;
   margin-bottom: 12rpx;
 }
@@ -132,12 +132,3 @@
   margin-top: 50rpx;
 }
 
-.header-item-active {
-  display: flex;
-  flex-direction: column;
-  border-bottom: 2px solid #fff;
-}
-.header-item {
-  display: flex;
-  flex-direction: column;
-}

@@ -14,71 +14,42 @@
   padding-top: 20rpx;
 }
 
-.share {
-  margin: 20rpx;
-}
-
 .icon-img {
   width: 50rpx;
   height: 50rpx;
 }
 
 .shareBtn {
-  width: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50rpx;
+  height: 50rpx;
   background: none !important;
   color: #000 !important;
+  padding: 0;
+  margin: 0;
 }
 
 .shareBtn::after {
   border: none;
 }
 
-.shareTxt {
-  display: flex;
-  flex: 3;
+.shareText {
   font-size: 28rpx;
-  color: #78909c;
-  margin-left: 30rpx;
-  justify-content: flex-end;
+  display: flex;
+  flex-direction: row;
   align-items: center;
+  margin-left: 20rpx;
+  margin-right: 50rpx;
 }
 
 .icon-container {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-  flex: 1;
-}
-
-.danmuInput {
-  padding: 10rpx;
-  border: 1px solid #beb9c1;
-  border-radius: 20rpx;
-  margin: 30rpx;
-  font-size: 26rpx;
-}
-
-.danmuButton {
-  display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 40rpx;
-  margin-right: 40rpx;
-  border-radius: 20px;
-  background-color: #ff6c70;
-  height: 80rpx;
-  align-self: center;
-}
-
-.danmuButton::after {
-  border: none;
-}
-
-.danmuButtonText {
-  font-size: 28rpx;
-  align-self: center;
-  color: #fff;
+  padding: 30rpx;
 }
 
 .index {

@@ -6,15 +6,18 @@
         <image src='../../resources/images/play.png' class='videoPlay'></image>
       </view>
       <text data-id='{{item.video_id}}' class='text-h5 title' bindtap='playVideo'>{{item.name}}</text>
-      <view class='icon-container'>
-        <button class='shareBtn' bindtap='like' data-id='{{index}}'>
-          <image src='{{item.islike==1?liked_img_src:like_img_src}}' class='icon-img'></image>
+       <view class='icon-container'>
+        <button class='shareBtn' bindtap='restore' data-id='{{index}}'>
+          <image src='{{item.islike==1?restored:restore}}' class='icon-img'></image>
         </button>
-        <text class='number'>点赞</text>
+        <text class='number'>{{item.restore_no}}</text>
+        <button class='shareBtn'>
+          <image src='{{view}}' class='icon-img'></image>
+        </button>
+        <text class='number'>{{item.view_no}}</text>
         <button open-type="share" class='shareBtn' data-id='{{item.id}}' data-title='{{item.text}}' data-cover='{{item.cover}}' data-type='video'>
-          <image src='{{share_img_src}}' class='icon-img'></image>
+          <image src='{{share_img_src}}' class='icon-img' id='restore_img_{{index}}'></image>
         </button>
-        <text class='number'>分享</text>
       </view>
       <view style='height:30rpx;background-color:#f2f1f3;'></view>
     </block>

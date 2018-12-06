@@ -13,9 +13,9 @@ Page({
    */
   data: {
     video: {},
-    restore_img_src: '../../resources/images/restore.png',
-    restored_img_src: '../../resources/images/restored.png',
-    share_img_src: '../../resources/images/share.png',
+    restore: '../../resources/images/restore.png',
+    restored: '../../resources/images/restored.png',
+    share: '../../resources/images/share.png',
     abouts: {}
   },
   /**
@@ -28,7 +28,7 @@ Page({
     });
     //请求视频
     util.http.get(API.GET_VIDEO, {
-      id: that.data.video_id
+      id: options.id
     }, {}).then(res => {
       that.setData({
         video: res.data.data
@@ -37,10 +37,10 @@ Page({
     //提交浏览
     util.http.post(API.VIEW_VIDEO, {
       id: options.id
-    })
+    }, {})
     //获取相关视频
     util.http.get(API.ABOUT, {
-      id: that.data.video_id
+      id: options.id
     }, {}).then(res => {
       that.setData({
         abouts: res.data.data
@@ -52,7 +52,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
-    this.videoContext = wx.createVideoContext('myVideo')
+
   },
 
   /**
@@ -96,11 +96,20 @@ Page({
   onShareAppMessage: function() {
 
   },
-  goToIndex: function() {
+  restore(e) {
+    this.setData({
+      ['video.is_restore']: 1
+    });
+    let id = e.currentTarget.dataset.id;
+    util.http.post(API.RESTORE_VIDEO, {
+      id: id
+    }, {}).then(res => {
+      if (res.data.code == 2000) {
+        wx.showToast({
+          title: '收藏成功',
+        })
+      }
+    })
+  }
 
-  },
-  getTime: function(e) {
-    //console.log(e.detail.currentTime);
-    this.currentTime = e.detail.currentTime;
-  },
 })

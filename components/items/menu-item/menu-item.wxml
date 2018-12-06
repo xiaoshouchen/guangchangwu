@@ -2,6 +2,6 @@
   <image class="menu-item-icon" src='{{icon}}' />
   <view class='menu-title-wrap flex-row items-center pingfangsc-m'>
     <text>{{title}}</text>
-    <image class="menu-next-icon" src='/images/icon/right.png' />
+    <image class="menu-next-icon" src='/resources/images/right.png' />
   </view>
 </navigator>

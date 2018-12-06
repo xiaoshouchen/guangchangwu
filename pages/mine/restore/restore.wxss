@@ -1,1 +1,2 @@
 /* pages/mine/restore/restore.wxss */
+@import "../../index/index.wxss";
